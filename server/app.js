@@ -13,8 +13,8 @@ const app = express();
 app.use(express.json()); // Body parser
 app.use(
   cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST","DELETE"],
+    origin: "https://tasizomanager.netlify.app",
+    methods: ["GET", "POST", "DELETE"],
     credentials: true,
   }),
 );
