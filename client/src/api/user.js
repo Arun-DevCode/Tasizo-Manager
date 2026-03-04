@@ -1,12 +1,15 @@
 export async function CreateUserAccount(formData) {
   try {
-    const res = await fetch("http://localhost:4000/api/user/create-account", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
+    const res = await fetch(
+      "https://api-tasizomanager.onrender.com/api/user/create-account",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(formData), // JSON Convert
       },
-      body: JSON.stringify(formData), // JSON Convert
-    });
+    );
     const data = await res.json(); // conversion
 
     // Error Validation
@@ -22,13 +25,16 @@ export async function CreateUserAccount(formData) {
 
 export async function UserLoginAction(credentials) {
   try {
-    const res = await fetch("http://localhost:4000/api/user/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const res = await fetch(
+      "https://api-tasizomanager.onrender.com/api/user/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(credentials),
       },
-      body: JSON.stringify(credentials),
-    });
+    );
 
     const data = await res.json();
 
@@ -43,7 +49,7 @@ export async function UserLoginAction(credentials) {
 }
 
 export const getUserProfile = async () => {
-  const API_URL = "http://localhost:4000/api/user/get-user";
+  const API_URL = "https://api-tasizomanager.onrender.com/api/user/get-user";
   const accessToken = localStorage.getItem("accessToken");
 
   try {

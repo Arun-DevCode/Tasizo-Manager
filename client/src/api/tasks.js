@@ -3,7 +3,7 @@ import axios from "axios";
 export const getAllTasks = async () => {
   try {
     const response = await fetch(
-      "http://localhost:4000/api/task/get-all-tasks",
+      "https://api-tasizomanager.onrender.com/api/task/get-all-tasks",
       {
         method: "GET",
         headers: {
@@ -38,7 +38,7 @@ export const deleteTask = async (id) => {
   try {
     // 2. Make the API call
     const response = await axios.delete(
-      `http://localhost:4000/api/task/delete-task/${id}`,
+      `https://api-tasizomanager.onrender.com/api/task/delete-task/${id}`,
       {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
